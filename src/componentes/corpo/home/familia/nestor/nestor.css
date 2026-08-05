@@ -1,0 +1,67 @@
+
+/* ===========================
+   NESTOR
+=========================== */
+
+.nestor{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#6d4c41,#8d6e63,#bcaaa4);
+}
+
+.nestor-card{
+    width:100%;
+    max-width:750px;
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    text-align:center;
+}
+
+.nestor-card h1{
+    font-size:2.5rem;
+    color:#5d4037;
+    margin-bottom:15px;
+}
+
+.nestor-card h2{
+    color:#795548;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+.nestor-card p{
+    color:#555;
+    font-size:1.05rem;
+    line-height:1.8;
+    margin-bottom:18px;
+    text-align:justify;
+}
+
+.nestor-botoes{
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.nestor-botoes button{
+    padding:12px 22px;
+    border:none;
+    margin: 10px;
+    border-radius:10px;
+    background:#6d4c41;
+    color:#fff;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nestor-botoes button:hover{
+    background:#4e342e;
+    transform:translateY(-3px);
+}

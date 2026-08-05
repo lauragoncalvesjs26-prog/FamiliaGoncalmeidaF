@@ -1,0 +1,490 @@
+.aniversarios-page {
+  min-height: 100vh;
+  padding: 55px 80px;
+
+  color: #f8fafc;
+
+  animation: entradaAniversarios 0.7s ease forwards;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.aniversarios-header {
+  width: 1000px;
+  margin: 0 auto 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.aniversarios-header-icon {
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 32px;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(12px);
+}
+
+.aniversarios-header h1 {
+  margin-bottom: 5px;
+
+  font-size: 36px;
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+  color: #ffffff;
+}
+
+.aniversarios-header p {
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 15px;
+}
+
+
+/* ================================
+   PRÓXIMO ANIVERSARIANTE
+================================ */
+
+.proximo-aniversariante {
+  width: 1000px;
+  min-height: 190px;
+
+  margin: 0 auto 45px;
+  padding: 32px 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 35, 54, 0.92),
+      rgba(9, 48, 70, 0.88)
+    );
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.18);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.proximo-aniversariante::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  top: -160px;
+  right: 100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(45, 212, 191, 0.18),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.proximo-info {
+  position: relative;
+  z-index: 1;
+}
+
+.proximo-label {
+  display: inline-block;
+
+  padding: 6px 11px;
+
+  color: #67e8f9;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  background:
+    rgba(34, 211, 238, 0.1);
+
+  border: 1px solid
+    rgba(34, 211, 238, 0.18);
+
+  border-radius: 30px;
+}
+
+.proximo-info h2 {
+  margin: 14px 0 7px;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.proximo-info p {
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 15px;
+}
+
+.proximo-info strong {
+  color: #67e8f9;
+}
+
+
+/* ================================
+   CONTADOR
+================================ */
+
+.contador-aniversario {
+  width: 135px;
+  height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 20px;
+
+  position: relative;
+  z-index: 1;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.08);
+}
+
+.contador-aniversario strong {
+  font-size: 42px;
+  line-height: 1;
+
+  color: #67e8f9;
+}
+
+.contador-aniversario span {
+  margin-top: 8px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+}
+
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+.aniversarios-conteudo {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.titulo-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+
+.titulo-secao h2 {
+  margin-bottom: 5px;
+
+  font-size: 22px;
+  font-weight: 750;
+
+  color: #ffffff;
+}
+
+.titulo-secao p {
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 14px;
+}
+
+.total-pessoas {
+  padding: 8px 15px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 30px;
+
+  backdrop-filter: blur(8px);
+}
+
+
+/* ================================
+   GRID
+================================ */
+
+.aniversarios-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 14px;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.aniversario-card {
+  min-height: 105px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  background:
+    rgba(7, 35, 54, 0.78);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.aniversario-card:hover {
+  transform: translateY(-4px);
+
+  background:
+    rgba(7, 42, 63, 0.9);
+
+  border-color:
+    rgba(103, 232, 249, 0.25);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+/* ================================
+   DESTAQUE
+================================ */
+
+.aniversario-destaque {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 43, 62, 0.95),
+      rgba(8, 61, 77, 0.9)
+    );
+
+  border-color:
+    rgba(103, 232, 249, 0.35);
+
+  box-shadow:
+    0 10px 35px
+    rgba(34, 211, 238, 0.1);
+}
+
+.aniversario-destaque:hover {
+  border-color:
+    rgba(103, 232, 249, 0.55);
+}
+
+
+/* ================================
+   EMOJI
+================================ */
+
+.pessoa-emoji {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 27px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 15px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.aniversario-card:hover .pessoa-emoji {
+  transform: scale(1.06);
+
+  background:
+    rgba(103, 232, 249, 0.1);
+}
+
+
+/* ================================
+   INFORMAÇÕES
+================================ */
+
+.pessoa-info {
+  flex: 1;
+}
+
+.pessoa-topo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.pessoa-topo h3 {
+  font-size: 17px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.badge-proximo {
+  padding: 4px 8px;
+
+  color: #67e8f9;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  background:
+    rgba(34, 211, 238, 0.1);
+
+  border: 1px solid
+    rgba(34, 211, 238, 0.2);
+
+  border-radius: 20px;
+}
+
+.grupo-pessoa {
+  display: block;
+
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 11px;
+}
+
+.data-nascimento {
+  margin-top: 8px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+}
+
+
+/* ================================
+   DIAS
+================================ */
+
+.dias-card {
+  min-width: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dias-card strong {
+  font-size: 23px;
+  font-weight: 800;
+
+  color: #67e8f9;
+}
+
+.dias-card span {
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 10px;
+}
+
+
+/* ================================
+   ANIMAÇÃO
+================================ */
+
+@keyframes entradaAniversarios {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

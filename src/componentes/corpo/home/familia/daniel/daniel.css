@@ -1,0 +1,59 @@
+.daniel{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(135deg,#0f9b0f,#38ef7d);
+}
+
+.daniel-card{
+    width: 750px;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+.daniel-card h1{
+    font-size: 50px;
+    color: #0f9b0f;
+    margin-bottom: 15px;
+}
+
+.daniel-card h2{
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.daniel-card p{
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.daniel-botoes{
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.daniel-botoes button{
+    background: #0f9b0f;
+    color: white;
+    border: none;
+    margin: 10px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.daniel-botoes button:hover{
+    background: #087f23;
+    transform: translateY(-5px);
+}

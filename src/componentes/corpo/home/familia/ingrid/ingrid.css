@@ -1,0 +1,62 @@
+.ingrid {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe5ec, #ffd6f6);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.ingrid-card {
+    max-width: 750px;
+    width: 100%;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+.ingrid-card h1 {
+    font-size: 2.5rem;
+    color: #d63384;
+    margin-bottom: 10px;
+}
+
+.ingrid-card h2 {
+    color: #e85d9e;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.ingrid-card p {
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.ingrid-botoes {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.ingrid-botoes button {
+    background: #d63384;
+    color: #fff;
+    margin: 10px;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.ingrid-botoes button:hover {
+    background: #b5176b;
+    transform: translateY(-3px);
+}

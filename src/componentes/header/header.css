@@ -1,0 +1,226 @@
+.site-header {
+  width: 100%;
+  background: linear-gradient(135deg, #5b3cc4, #7c4dff);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1000;
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  min-height: 75px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: white;
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text strong {
+  font-size: 1.1rem;
+}
+
+.logo-text span {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* NAVEGAÇÃO */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffe082;
+}
+
+/* DROPDOWN */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-title {
+  cursor: pointer;
+  display: block;
+  padding: 10px 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 190px;
+
+  background-color: white;
+  border-radius: 12px;
+
+  padding: 8px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+
+  padding: 10px 12px;
+
+  color: #333;
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  font-size: 0.95rem;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0ebff;
+  color: #5b3cc4;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+  .header-container {
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 15px 0;
+    gap: 10px;
+  }
+
+  .header-nav {
+    gap: 20px;
+  }
+
+  .dropdown-menu {
+    left: 50%;
+    right: auto;
+
+    transform: translate(-50%, -10px);
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    transform: translate(-50%, 0);
+  }
+}
+.logout-btn {
+
+    margin-left: 20px;
+
+    padding: 8px 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e53935;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+.logout-btn:hover {
+
+    background: #c62828;
+
+    transform: translateY(-2px);
+
+}
+
+.logout-btn:active {
+
+    transform: scale(.96);
+
+}
+.usuario-logado {
+
+    color: white;
+
+    font-weight: bold;
+
+    margin-right: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 15px;
+
+}

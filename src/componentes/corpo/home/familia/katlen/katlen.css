@@ -1,0 +1,62 @@
+.katlen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f8d7ff, #e7c6ff);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.katlen-card {
+    max-width: 750px;
+    width: 100%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.katlen-card h1 {
+    font-size: 2.5rem;
+    color: #7b2cbf;
+    margin-bottom: 10px;
+}
+
+.katlen-card h2 {
+    color: #9d4edd;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.katlen-card p {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.katlen-botoes {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.katlen-botoes button {
+    background: #9d4edd;
+    color: white;
+    margin: 10px;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.katlen-botoes button:hover {
+    background: #7b2cbf;
+    transform: translateY(-3px);
+}

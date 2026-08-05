@@ -1,0 +1,66 @@
+.megan {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #dbeafe, #c7d2fe);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.megan-card {
+    max-width: 750px;
+    width: 100%;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+.megan-card h1 {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.megan-card h2 {
+    color: #3b82f6;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.megan-card p {
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.megan-botoes {
+    display: block;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.megan-botoes button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    margin: 5px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.megan-botoes button:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+.voltar{
+    margin-top: 10px;
+}

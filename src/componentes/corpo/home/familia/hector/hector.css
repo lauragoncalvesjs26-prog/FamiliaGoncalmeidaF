@@ -1,0 +1,60 @@
+
+.hector{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(135deg,#4b6cb7,#182848);
+}
+
+.hector-card{
+    width: 750px;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+.hector-card h1{
+    font-size: 90px;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.hector-card h2{
+    font-size: 30px;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.hector-card p{
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.hector-botoes{
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.hector-botoes button{
+    background: #1e3a8a;
+    color: white;
+    margin: 10px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hector-botoes button:hover{
+    background: #162d6b;
+    transform: translateY(-5px);
+}
