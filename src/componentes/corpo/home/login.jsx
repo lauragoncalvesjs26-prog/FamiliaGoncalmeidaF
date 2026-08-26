@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./login.css"
+import "./login.css";
 import { API_URL } from "../../../api";
 
 export default function Login() {
@@ -8,19 +8,26 @@ export default function Login() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
-
   const [senha, setSenha] = useState("");
+  const [carregando, setCarregando] = useState(false);
 
   async function entrar(e) {
 
     e.preventDefault();
 
+    if (!email || !senha) {
+
+      alert("Preencha o email e a senha.");
+
+      return;
+    }
+
+    setCarregando(true);
+
     try {
 
       const resposta = await fetch(
-        `${API_URL}/login`
-        ,
-        
+        `${API_URL}/login`,
         {
           method: "POST",
 
@@ -29,38 +36,59 @@ export default function Login() {
           },
 
           body: JSON.stringify({
-            email,
-            senha
+            email: email.trim(),
+            senha: senha
           })
         }
       );
 
+      const dados = await resposta.json();
+
+      console.log("RESPOSTA COMPLETA DO LOGIN:", dados);
+console.log("TOKEN RECEBIDO:", dados.token);
+
       if (!resposta.ok) {
 
-        alert("Email ou senha inválidos.");
+        alert(
+          dados.detail ||
+          "Email ou senha inválidos."
+        );
 
         return;
       }
 
-      const dados = await resposta.json();
-
-      localStorage.setItem("logado", "true");
-
       localStorage.setItem(
-        "usuario",
-        JSON.stringify(dados.usuario)
-      );
+  "logado",
+  "true"
+);
+
+localStorage.setItem(
+  "token",
+  dados.token
+);
+
+localStorage.setItem(
+  "usuario",
+  JSON.stringify(dados.usuario)
+);
 
       navigate("/");
 
     } catch (erro) {
 
-      console.error(erro);
+      console.error(
+        "Erro no login:",
+        erro
+      );
 
-      alert("Erro ao conectar com o servidor.");
+      alert(
+        "Erro ao conectar com o servidor."
+      );
 
+    } finally {
+
+      setCarregando(false);
     }
-
   }
 
   return (
@@ -75,28 +103,43 @@ export default function Login() {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) =>
+            setEmail(e.target.value)
+          }
+          required
         />
-
-        <br /><br />
 
         <input
           type="password"
           placeholder="Senha"
           value={senha}
-          onChange={(e) => setSenha(e.target.value)}
+          onChange={(e) =>
+            setSenha(e.target.value)
+          }
+          required
         />
 
-        <br /><br />
-
-        <button type="submit">
-          Entrar
+        <button
+          type="submit"
+          disabled={carregando}
+        >
+          {carregando
+            ? "Entrando..."
+            : "Entrar"
+          }
         </button>
 
       </form>
 
+      <button
+        type="button"
+        onClick={() =>
+          navigate("/cadastro")
+        }
+      >
+        Não tenho conta, vou me cadastrar
+      </button>
+
     </div>
-
   );
-
 }

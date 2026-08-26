@@ -28,6 +28,9 @@ import Ingrid from './componentes/corpo/home/familia/ingrid/ingrid';
 import Home from './componentes/corpo/home/home';
 import Ex from './ex';
 import Login from './componentes/corpo/home/login';
+import Cadastro from './componentes/corpo/home/cadastro';
+import Painel from '../painel/painel';
+import Sobre from '../sobre/sobre';
 //==========================
 
 export default function App() {
@@ -38,6 +41,16 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
+        <Route
+          path="/sobre"
+          element={<Sobre />}
+        />
+        
+        <Route
+          path="/painel"
+          element={<Painel />}
+        />
+
           <Route
           path="/login"
           element={<Login />}
@@ -47,6 +60,10 @@ export default function App() {
           element={<Katlen />}
         />
         <Route
+          path="/cadastro"
+          element={<Cadastro />}
+        />
+          <Route
           path="/ex"
           element={<Ex />}
         />
