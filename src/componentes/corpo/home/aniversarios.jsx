@@ -1,9 +1,11 @@
 import React from "react";
+
 import "./aniversarios.css";
 
+// =========================================================
+// ARRAY DE ANIVERSÁRIOS
+// =========================================================
 
-
-// Array e objetos
 const aniversarios = [
   {
     nome: "Laura",
@@ -41,7 +43,7 @@ const aniversarios = [
     data: "1980-07-28",
     grupo: "Família",
   },
-   {
+  {
     nome: "Ingrid",
     emoji: "🦋",
     data: "2012-03-05",
@@ -67,10 +69,16 @@ const aniversarios = [
   },
 ];
 
+// =========================================================
+// CALCULAR PRÓXIMO ANIVERSÁRIO
+// =========================================================
+
 function calcularProximoAniversario(dataNascimento) {
   const hoje = new Date();
 
-  const nascimento = new Date(`${dataNascimento}T00:00:00`);
+  const nascimento = new Date(
+    `${dataNascimento}T00:00:00`
+  );
 
   let proximoAniversario = new Date(
     hoje.getFullYear(),
@@ -99,6 +107,10 @@ function calcularProximoAniversario(dataNascimento) {
   };
 }
 
+// =========================================================
+// FORMATAR DATA
+// =========================================================
+
 function formatarData(data) {
   return data.toLocaleDateString("pt-BR", {
     day: "2-digit",
@@ -106,47 +118,106 @@ function formatarData(data) {
   });
 }
 
-function calcularIdade(dataNascimento) {
-  const hoje = new Date();
-  const nascimento = new Date(`${dataNascimento}T00:00:00`);
+// =========================================================
+// COMPONENTE
+// =========================================================
 
-  let idade =
-    hoje.getFullYear() - nascimento.getFullYear();
+export default function Aniversarios({ podeVerDaniel }) {
+  // =======================================================
+  // FILTRAR ANIVERSÁRIOS
+  //
+  // Se podeVerDaniel for false:
+  // Daniel é removido completamente.
+  //
+  // Se podeVerDaniel for true:
+  // Todos aparecem normalmente.
+  // =======================================================
 
-  const aniversarioEsteAno = new Date(
-    hoje.getFullYear(),
-    nascimento.getMonth(),
-    nascimento.getDate()
+  const aniversariosVisiveis = aniversarios.filter(
+    (pessoa) => pessoa.nome !== "Daniel" || podeVerDaniel
   );
 
-  if (hoje < aniversarioEsteAno) {
-    idade--;
-  }
+  // =======================================================
+  // CALCULAR DADOS DOS ANIVERSÁRIOS VISÍVEIS
+  // =======================================================
 
-  return idade;
-}
+  const aniversariosComDados = aniversariosVisiveis.map(
+    (pessoa) => {
+      const proximo = calcularProximoAniversario(
+        pessoa.data
+      );
 
-export default function Aniversarios() {
-  const aniversariosComDados = aniversarios.map((pessoa) => {
-    const proximo = calcularProximoAniversario(
-      pessoa.data
-    );
+      return {
+        ...pessoa,
+        ...proximo,
+      };
+    }
+  );
 
-    return {
-      ...pessoa,
-      ...proximo,
-    };
-  });
+  // =======================================================
+  // ORDENAR POR PRÓXIMO ANIVERSÁRIO
+  // =======================================================
+
+  const aniversariosOrdenados = [
+    ...aniversariosComDados,
+  ].sort(
+    (a, b) =>
+      a.diasRestantes - b.diasRestantes
+  );
+
+  // =======================================================
+  // PEGAR PRÓXIMO ANIVERSARIANTE
+  // =======================================================
 
   const proximoAniversariante =
-    [...aniversariosComDados].sort(
-      (a, b) => a.diasRestantes - b.diasRestantes
-    )[0];
+    aniversariosOrdenados[0];
+
+  // =======================================================
+  // SEGURANÇA EXTRA
+  //
+  // Evita erro caso não exista nenhum aniversário visível.
+  // =======================================================
+
+  if (!proximoAniversariante) {
+    return (
+      <div className="aniversarios-page">
+        <header className="aniversarios-header">
+          <div className="aniversarios-header-icon">
+            🎂
+          </div>
+
+          <div>
+            <h1>Aniversários</h1>
+
+            <p>
+              Confira as próximas datas especiais
+              da família e dos amigos.
+            </p>
+          </div>
+        </header>
+
+        <section className="aniversarios-conteudo">
+          <p>
+            Nenhum aniversário disponível.
+          </p>
+        </section>
+      </div>
+    );
+  }
+
+  // =======================================================
+  // RENDER
+  // =======================================================
 
   return (
     <div className="aniversarios-page">
 
+      {/* =================================================
+          CABEÇALHO
+      ================================================= */}
+
       <header className="aniversarios-header">
+
         <div className="aniversarios-header-icon">
           🎂
         </div>
@@ -159,12 +230,17 @@ export default function Aniversarios() {
             da família e dos amigos.
           </p>
         </div>
+
       </header>
 
+      {/* =================================================
+          PRÓXIMO ANIVERSARIANTE
+      ================================================= */}
 
       <section className="proximo-aniversariante">
 
         <div className="proximo-info">
+
           <span className="proximo-label">
             🎉 PRÓXIMO ANIVERSARIANTE
           </span>
@@ -176,15 +252,18 @@ export default function Aniversarios() {
 
           <p>
             O aniversário será no dia{" "}
+
             <strong>
               {formatarData(
                 proximoAniversariante.data
               )}
             </strong>
           </p>
+
         </div>
 
         <div className="contador-aniversario">
+
           <strong>
             {proximoAniversariante.diasRestantes}
           </strong>
@@ -194,14 +273,19 @@ export default function Aniversarios() {
               ? "dia restante"
               : "dias restantes"}
           </span>
+
         </div>
 
       </section>
 
+      {/* =================================================
+          TODOS OS ANIVERSÁRIOS
+      ================================================= */}
 
       <section className="aniversarios-conteudo">
 
         <div className="titulo-secao">
+
           <div>
             <h2>Todos os aniversários</h2>
 
@@ -212,20 +296,22 @@ export default function Aniversarios() {
           </div>
 
           <span className="total-pessoas">
-            {aniversarios.length} pessoas
+            {aniversariosVisiveis.length}{" "}
+            {aniversariosVisiveis.length === 1
+              ? "pessoa"
+              : "pessoas"}
           </span>
+
         </div>
 
+        {/* =================================================
+            GRID
+        ================================================= */}
 
         <div className="aniversarios-grid">
 
-          {aniversariosComDados
-            .sort(
-              (a, b) =>
-                a.diasRestantes -
-                b.diasRestantes
-            )
-            .map((pessoa) => {
+          {aniversariosOrdenados.map(
+            (pessoa) => {
 
               const ehProximo =
                 pessoa.nome ===
@@ -241,20 +327,28 @@ export default function Aniversarios() {
                   key={pessoa.nome}
                 >
 
+                  {/* EMOJI */}
+
                   <div className="pessoa-emoji">
                     {pessoa.emoji}
                   </div>
 
+                  {/* INFORMAÇÕES */}
+
                   <div className="pessoa-info">
 
                     <div className="pessoa-topo">
-                      <h3>{pessoa.nome}</h3>
+
+                      <h3>
+                        {pessoa.nome}
+                      </h3>
 
                       {ehProximo && (
                         <span className="badge-proximo">
                           Próximo
                         </span>
                       )}
+
                     </div>
 
                     <span className="grupo-pessoa">
@@ -269,6 +363,8 @@ export default function Aniversarios() {
                     </p>
 
                   </div>
+
+                  {/* DIAS */}
 
                   <div className="dias-card">
 
@@ -286,7 +382,8 @@ export default function Aniversarios() {
 
                 </div>
               );
-            })}
+            }
+          )}
 
         </div>
 

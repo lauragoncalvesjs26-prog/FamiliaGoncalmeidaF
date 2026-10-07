@@ -1,0 +1,489 @@
+/* =========================================================
+   TERMINAL SQL
+   Moderno • Fofo • Azul
+   ========================================================= */
+
+.terminal-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 24px auto;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(147, 197, 253, 0.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #0b1220 0%,
+            #101a2e 50%,
+            #0d1729 100%
+        );
+
+    border: 1px solid rgba(147, 197, 253, 0.22);
+    border-radius: 20px;
+    overflow: hidden;
+
+    color: #dbeafe;
+
+    font-family:
+        "JetBrains Mono",
+        "Fira Code",
+        "Cascadia Code",
+        Consolas,
+        monospace;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.35),
+        0 0 35px rgba(96, 165, 250, 0.08);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 58px;
+    padding: 0 18px;
+
+    background: rgba(15, 23, 42, 0.72);
+    border-bottom: 1px solid rgba(147, 197, 253, 0.14);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.terminal-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #bfdbfe;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.terminal-indicador {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #7dd3fc;
+
+    box-shadow:
+        0 0 8px rgba(125, 211, 252, 0.8),
+        0 0 18px rgba(96, 165, 250, 0.35);
+
+    animation: terminal-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes terminal-pulse {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.65;
+        transform: scale(0.85);
+    }
+}
+
+
+/* =========================================================
+   BOTÃO LIMPAR
+   ========================================================= */
+
+.terminal-limpar {
+    border: 1px solid rgba(147, 197, 253, 0.18);
+    border-radius: 10px;
+
+    padding: 7px 12px;
+
+    background: rgba(59, 130, 246, 0.08);
+
+    color: #93c5fd;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.terminal-limpar:hover {
+    background: rgba(96, 165, 250, 0.16);
+    border-color: rgba(147, 197, 253, 0.35);
+    transform: translateY(-1px);
+}
+
+.terminal-limpar:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   CORPO
+   ========================================================= */
+
+.terminal-corpo {
+    min-height: 420px;
+    max-height: 650px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.72),
+            rgba(8, 15, 29, 0.9)
+        );
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(96, 165, 250, 0.35) transparent;
+}
+
+.terminal-corpo::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-corpo::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terminal-corpo::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(96, 165, 250, 0.25);
+}
+
+.terminal-corpo::-webkit-scrollbar-thumb:hover {
+    background: rgba(125, 211, 252, 0.4);
+}
+
+
+/* =========================================================
+   LINHAS
+   ========================================================= */
+
+.terminal-linha {
+    margin-bottom: 12px;
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+    line-height: 1.65;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    animation: terminal-entrada 0.22s ease-out;
+}
+
+@keyframes terminal-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   COMANDO
+   ========================================================= */
+
+.terminal-comando {
+    color: #bfdbfe;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(59, 130, 246, 0.10),
+            rgba(59, 130, 246, 0.035)
+        );
+
+    border-left: 3px solid #60a5fa;
+
+    box-shadow:
+        inset 0 0 20px rgba(59, 130, 246, 0.025);
+}
+
+
+/* =========================================================
+   RESULTADO
+   ========================================================= */
+
+.terminal-resultado {
+    color: #dbeafe;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(96, 165, 250, 0.055),
+            rgba(129, 140, 248, 0.035)
+        );
+
+    border: 1px solid rgba(147, 197, 253, 0.08);
+}
+
+.terminal-resultado-pre {
+    margin: 0;
+
+    color: #c7d2fe;
+
+    font-family: inherit;
+    font-size: 12.5px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   ERRO
+   ========================================================= */
+
+.terminal-erro {
+    color: #fecdd3;
+
+    background: rgba(244, 63, 94, 0.07);
+
+    border-left: 3px solid #fb7185;
+
+    box-shadow:
+        0 0 20px rgba(244, 63, 94, 0.035);
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.terminal-input-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+
+    margin-top: auto;
+    padding: 14px;
+
+    border: 1px solid rgba(147, 197, 253, 0.12);
+    border-radius: 14px;
+
+    background: rgba(15, 23, 42, 0.8);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 8px 25px rgba(2, 6, 23, 0.18);
+}
+
+
+/* =========================================================
+   PROMPT
+   ========================================================= */
+
+.terminal-prompt {
+    flex-shrink: 0;
+
+    padding-bottom: 8px;
+
+    color: #7dd3fc;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 10px rgba(125, 211, 252, 0.45);
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.terminal-input-area textarea {
+    flex: 1;
+
+    min-height: 38px;
+    max-height: 150px;
+
+    padding: 9px 10px;
+
+    resize: vertical;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(30, 41, 59, 0.65);
+
+    color: #e0f2fe;
+
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.terminal-input-area textarea::placeholder {
+    color: #64748b;
+}
+
+.terminal-input-area textarea:hover {
+    background: rgba(30, 41, 59, 0.82);
+}
+
+.terminal-input-area textarea:focus {
+    border-color: rgba(96, 165, 250, 0.42);
+
+    background: rgba(30, 41, 59, 0.9);
+
+    box-shadow:
+        0 0 0 3px rgba(96, 165, 250, 0.08),
+        0 0 20px rgba(59, 130, 246, 0.06);
+}
+
+.terminal-input-area textarea:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   BOTÃO EXECUTAR
+   ========================================================= */
+
+.terminal-input-area button {
+    flex-shrink: 0;
+
+    min-height: 38px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(125, 211, 252, 0.3);
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #6366f1
+        );
+
+    color: #eff6ff;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 18px rgba(59, 130, 246, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.terminal-input-area button:hover:not(:disabled) {
+    transform: translateY(-1px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 8px 24px rgba(59, 130, 246, 0.32);
+}
+
+.terminal-input-area button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.terminal-input-area button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .terminal-container {
+        margin: 12px;
+        border-radius: 16px;
+    }
+
+    .terminal-corpo {
+        min-height: 360px;
+        padding: 12px;
+    }
+
+    .terminal-input-area {
+        gap: 7px;
+        padding: 10px;
+    }
+
+    .terminal-input-area button {
+        padding: 0 12px;
+    }
+
+    .terminal-linha {
+        font-size: 12px;
+    }
+
+    .terminal-resultado-pre {
+        font-size: 11.5px;
+    }
+}
+
+
+/* =========================================================
+   REDUZIR ANIMAÇÕES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .terminal-indicador,
+    .terminal-linha {
+        animation: none;
+    }
+
+    .terminal-limpar,
+    .terminal-input-area button,
+    .terminal-input-area textarea {
+        transition: none;
+    }
+}

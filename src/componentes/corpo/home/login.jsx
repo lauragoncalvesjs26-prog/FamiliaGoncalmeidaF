@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./login.css";
 import { API_URL } from "../../../api";
 
+
 export default function Login() {
 
   const navigate = useNavigate();
@@ -139,6 +140,8 @@ localStorage.setItem(
       >
         Não tenho conta, vou me cadastrar
       </button>
+
+     
 
     </div>
   );
