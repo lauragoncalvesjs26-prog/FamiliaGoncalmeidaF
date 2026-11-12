@@ -101,6 +101,8 @@ return (
             minha família. Clique em um dos botões abaixo para conhecer um
             pouco mais sobre cada pessoa e seus principais hobbies.
           </p>
+
+          
         </div>
 
         <div className="home-botoes">
