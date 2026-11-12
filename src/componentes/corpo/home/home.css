@@ -1,455 +1,1057 @@
+/* ============================================================
+   HOME - FAMÍLIA GONÇALMEIDA
+   Tema: Acolhedor, escuro e moderno
+   ============================================================ */
+
 .home-page {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  color: #f8fafc;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.2), transparent 28%),
-    radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.18), transparent 30%),
-    radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.12), transparent 35%),
-    linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
+    position: relative !important;
+    isolation: isolate !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+
+    background:
+        radial-gradient(
+            circle at 12% 12%,
+            rgba(42, 112, 78, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(174, 137, 65, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #071a15 0%,
+            #102b22 45%,
+            #091b17 100%
+        ) !important;
+
+    color: #f3f5ec !important;
 }
+
+/* ============================================================
+   EFEITOS DE FUNDO
+   ============================================================ */
+
+.home-page::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(77, 145, 105, 0.13),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 0% 100%,
+            rgba(194, 157, 83, 0.07),
+            transparent 45%
+        ) !important;
+
+    animation: homeFundoRespirar 12s ease-in-out infinite alternate !important;
+}
+
+.home-page::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+
+    opacity: 0.12 !important;
+
+    background-image:
+        radial-gradient(
+            rgba(225, 204, 145, 0.35) 0.7px,
+            transparent 0.7px
+        ) !important;
+
+    background-size: 28px 28px !important;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL
+   ============================================================ */
 
 .home {
-  width: min(1200px, 92%);
-  margin: 0 auto;
-  padding: 50px 0 70px;
-  flex: 1;
+    position: relative !important;
+    z-index: 1 !important;
+
+    width: 100% !important;
+    max-width: 1500px !important;
+    min-height: 75vh !important;
+
+    margin: 0 auto !important;
+    padding: 65px 55px 85px !important;
+
+    box-sizing: border-box !important;
 }
 
-.home-card {
-  position: relative;
-  width: 100%;
-  padding: 55px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.09),
-    rgba(255, 255, 255, 0.035)
-  );
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+/* ============================================================
+   CARD PRINCIPAL
+   ============================================================ */
+
+.home .home-card {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 1250px !important;
+
+    margin: 0 auto !important;
+    padding: 48px 45px !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(174, 190, 151, 0.20) !important;
+    border-radius: 28px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(26, 61, 47, 0.96),
+            rgba(13, 39, 31, 0.97)
+        ) !important;
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07),
+        0 0 35px rgba(65, 133, 91, 0.08) !important;
+
+    overflow: hidden !important;
+
+    animation: homeCardEntrada 0.9s ease both !important;
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease !important;
 }
 
-.home-card::before {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  top: -190px;
-  right: -150px;
-  border-radius: 50%;
-  background: rgba(59, 130, 246, 0.14);
-  filter: blur(20px);
-  pointer-events: none;
+.home .home-card::before {
+    content: "" !important;
+
+    position: absolute !important;
+    top: 0 !important;
+    left: 8% !important;
+
+    width: 84% !important;
+    height: 2px !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #bca16a,
+        #e0c98d,
+        #bca16a,
+        transparent
+    ) !important;
+
+    opacity: 0.85 !important;
 }
 
-.home-card::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  left: -160px;
-  bottom: -180px;
-  border-radius: 50%;
-  background: rgba(168, 85, 247, 0.12);
-  filter: blur(20px);
-  pointer-events: none;
+.home .home-card::after {
+    content: "" !important;
+
+    position: absolute !important;
+    top: -140px !important;
+    right: -120px !important;
+
+    width: 300px !important;
+    height: 300px !important;
+
+    border-radius: 50% !important;
+
+    background: radial-gradient(
+        circle,
+        rgba(195, 161, 99, 0.10),
+        transparent 70%
+    ) !important;
+
+    pointer-events: none !important;
 }
 
-.home-header {
-  position: relative;
-  z-index: 2;
-  max-width: 850px;
-  margin: 0 auto 45px;
-  text-align: center;
+/* ============================================================
+   CABEÇALHO DA HOME
+   ============================================================ */
+
+.home .home-header {
+    position: relative !important;
+    z-index: 1 !important;
+
+    margin-bottom: 45px !important;
+    padding-bottom: 30px !important;
+
+    text-align: center !important;
+
+    border-bottom: 1px solid rgba(190, 177, 132, 0.20) !important;
+
+    animation: homeConteudoEntrada 0.9s ease 0.15s both !important;
 }
 
-.home-header h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.1rem, 5vw, 3.7rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.045em;
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #bfdbfe 45%,
-    #ddd6fe
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.home .home-header h1 {
+    margin: 0 0 15px !important;
+
+    color: #e7d5a4 !important;
+
+    font-size: clamp(2rem, 4vw, 3.2rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    line-height: 1.2 !important;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(207, 174, 111, 0.14) !important;
 }
 
-.home-header p {
-  max-width: 760px;
-  margin: 0 auto;
-  color: #cbd5e1;
-  font-size: 1.05rem;
-  line-height: 1.8;
+.home .home-header p {
+    max-width: 750px !important;
+
+    margin: 0 auto !important;
+
+    color: #c0cfc1 !important;
+
+    font-size: clamp(0.95rem, 1.5vw, 1.12rem) !important;
+    font-weight: 400 !important;
+    line-height: 1.8 !important;
 }
 
-.home-botoes {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
-  width: 100%;
+/* ============================================================
+   ORGANIZAÇÃO DOS GRUPOS
+   ============================================================ */
+
+.home .home-botoes {
+    display: grid !important;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 30px !important;
+    align-items: stretch !important;
+
+    width: 100% !important;
+
+    animation: homeConteudoEntrada 0.9s ease 0.3s both !important;
 }
 
-.grupo-botoes {
-  position: relative;
-  padding: 27px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 24px;
-  background: rgba(15, 23, 42, 0.58) !important;
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+/* ============================================================
+   GRUPOS - FAMÍLIA E AMIGOS
+   ============================================================ */
+
+.home .grupo-botoes {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-width: 0 !important;
+
+    padding: 30px 25px !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(164, 188, 153, 0.19) !important;
+    border-radius: 22px !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(35, 76, 57, 0.78),
+        rgba(18, 48, 37, 0.92)
+    ) !important;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+
+    overflow: hidden !important;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease !important;
 }
 
-.grupo-botoes:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 22px 50px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+/* Detalhe superior dos grupos */
+
+.home .grupo-botoes::before {
+    content: "" !important;
+
+    position: absolute !important;
+    top: 0 !important;
+    left: 12% !important;
+
+    width: 76% !important;
+    height: 2px !important;
+
+    border-radius: 0 0 5px 5px !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #b9a16b,
+        transparent
+    ) !important;
+
+    opacity: 0.8 !important;
 }
 
-.familia-botoes {
-  border-top: 2px solid rgba(96, 165, 250, 0.55);
+/* Brilho interno */
+
+.home .grupo-botoes::after {
+    content: "" !important;
+
+    position: absolute !important;
+    top: -100px !important;
+    right: -100px !important;
+
+    width: 200px !important;
+    height: 200px !important;
+
+    border-radius: 50% !important;
+
+    background: radial-gradient(
+        circle,
+        rgba(184, 161, 105, 0.09),
+        transparent 70%
+    ) !important;
+
+    pointer-events: none !important;
 }
 
-.familia-botoes:hover {
-  border-color: rgba(96, 165, 250, 0.3);
+/* Família */
+
+.home .familia-botoes {
+    border-color: rgba(119, 176, 133, 0.28) !important;
 }
 
-.amigos-botoes {
-  border-top: 2px solid rgba(167, 139, 250, 0.55);
+/* Amigos */
+
+.home .amigos-botoes {
+    border-color: rgba(192, 163, 105, 0.25) !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(57, 64, 43, 0.78),
+        rgba(30, 48, 35, 0.94)
+    ) !important;
 }
 
-.amigos-botoes:hover {
-  border-color: rgba(167, 139, 250, 0.3);
+/* ============================================================
+   CABEÇALHO DOS GRUPOS
+   ============================================================ */
+
+.home .grupo-header {
+    position: relative !important;
+    z-index: 1 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 13px !important;
+
+    margin-bottom: 25px !important;
+    padding-bottom: 20px !important;
+
+    border-bottom: 1px solid rgba(190, 177, 132, 0.16) !important;
 }
 
-.grupo-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 22px;
+.home .grupo-header h2 {
+    margin: 0 !important;
+
+    color: #e5d7b3 !important;
+
+    font-size: clamp(1.3rem, 2vw, 1.65rem) !important;
+    font-weight: 750 !important;
+    letter-spacing: 0.8px !important;
 }
 
-.grupo-icone {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 13px;
-  background: rgba(255, 255, 255, 0.06);
-  font-size: 1.3rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+.home .grupo-icone {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 43px !important;
+    height: 43px !important;
+
+    flex-shrink: 0 !important;
+
+    border: 1px solid rgba(218, 193, 132, 0.35) !important;
+    border-radius: 14px !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(183, 157, 99, 0.22),
+        rgba(119, 139, 91, 0.16)
+    ) !important;
+
+    color: #e8d4a2 !important;
+
+    font-size: 1.45rem !important;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease !important;
 }
 
-.grupo-header h2 {
-  margin: 0;
-  color: #f8fafc;
-  font-size: 1.35rem;
-  font-weight: 750;
-  letter-spacing: -0.02em;
+/* ============================================================
+   LISTA DE BOTÕES
+   ============================================================ */
+
+.home .lista-botoes {
+    position: relative !important;
+    z-index: 1 !important;
+
+    display: grid !important;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 13px !important;
+
+    width: 100% !important;
 }
 
-.grupo-header::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  margin-left: 5px;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.16),
-    transparent
-  );
+/* ============================================================
+   LINKS DAS PESSOAS
+   ============================================================ */
+
+.home .pessoa-link {
+    display: flex !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    text-decoration: none !important;
+
+    outline: none !important;
 }
 
-.lista-botoes {
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-  width: 100%;
+/* ============================================================
+   BOTÕES MODERNOS
+   ============================================================ */
+
+.home .pessoa-botao {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 11px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 58px !important;
+
+    padding: 12px 15px !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(165, 192, 160, 0.20) !important;
+    border-radius: 13px !important;
+
+    background: linear-gradient(
+        135deg,
+        rgba(43, 83, 61, 0.95),
+        rgba(25, 58, 43, 0.98)
+    ) !important;
+
+    color: #e9eee4 !important;
+
+    font-size: 0.96rem !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.2px !important;
+
+    text-align: left !important;
+
+    cursor: pointer !important;
+
+    overflow: hidden !important;
+
+    box-shadow:
+        0 5px 13px rgba(0, 0, 0, 0.17),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease !important;
 }
 
-.pessoa-link {
-  display: block;
-  width: 100%;
-  color: inherit;
-  text-decoration: none;
+/* Brilho que atravessa o botão */
+
+.home .pessoa-botao::before {
+    content: "" !important;
+
+    position: absolute !important;
+    top: 0 !important;
+    left: -120% !important;
+
+    width: 75% !important;
+    height: 100% !important;
+
+    background: linear-gradient(
+        105deg,
+        transparent,
+        rgba(255, 255, 255, 0.12),
+        transparent
+    ) !important;
+
+    transform: skewX(-20deg) !important;
+
+    transition: left 0.55s ease !important;
+
+    pointer-events: none !important;
 }
 
-.pessoa-botao {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  min-height: 60px;
-  padding: 13px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.045);
-  color: #e2e8f0;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 650;
-  text-align: left;
-  cursor: pointer;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
+/* Detalhe dourado lateral */
+
+.home .pessoa-botao::after {
+    content: "" !important;
+
+    position: absolute !important;
+    top: 20% !important;
+    left: 0 !important;
+
+    width: 3px !important;
+    height: 60% !important;
+
+    border-radius: 0 5px 5px 0 !important;
+
+    background: #c4a66b !important;
+
+    opacity: 0 !important;
+
+    transition: opacity 0.3s ease !important;
 }
 
-.pessoa-emoji {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  font-size: 1.15rem;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
+/* Emoji */
+
+.home .pessoa-emoji {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    width: 34px !important;
+    height: 34px !important;
+
+    border-radius: 10px !important;
+
+    background: rgba(211, 206, 166, 0.10) !important;
+
+    font-size: 1.25rem !important;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease !important;
 }
 
-.pessoa-botao::after {
-  content: "→";
-  margin-left: auto;
-  color: #64748b;
-  font-size: 1.2rem;
-  opacity: 0;
-  transform: translateX(-6px);
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    color 0.2s ease;
+/* ============================================================
+   ÁREA DE ANIVERSÁRIOS
+   ============================================================ */
+
+.home .home-aniversarios {
+    position: relative !important;
+
+    width: 100% !important;
+    max-width: 1250px !important;
+
+    margin: 45px auto 0 !important;
+
+    padding: 30px !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(196, 169, 111, 0.30) !important;
+    border-radius: 24px !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(53, 57, 39, 0.88),
+        rgba(25, 48, 36, 0.96)
+    ) !important;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07),
+        0 0 30px rgba(194, 157, 83, 0.06) !important;
+
+    overflow: hidden !important;
+
+    animation: homeConteudoEntrada 1s ease 0.45s both !important;
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease !important;
 }
 
-.pessoa-link:hover .pessoa-botao {
-  transform: translateX(5px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(147, 197, 253, 0.3);
-  color: #ffffff;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+.home .home-aniversarios::before {
+    content: "" !important;
+
+    position: absolute !important;
+    top: 0 !important;
+    left: 10% !important;
+
+    width: 80% !important;
+    height: 2px !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d2b77b,
+        #f0dba8,
+        #d2b77b,
+        transparent
+    ) !important;
 }
 
-.pessoa-link:hover .pessoa-emoji {
-  transform: scale(1.08);
-  background: rgba(255, 255, 255, 0.1);
+/* ============================================================
+   HOVER - INTERAÇÕES
+   ============================================================ */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .home .home-card:hover {
+        border-color: rgba(190, 174, 125, 0.32) !important;
+
+        box-shadow:
+            0 30px 75px rgba(0, 0, 0, 0.40),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08),
+            0 0 40px rgba(65, 133, 91, 0.11) !important;
+    }
+
+    .home .grupo-botoes:hover {
+        transform: translateY(-5px) !important;
+
+        border-color: rgba(197, 174, 119, 0.43) !important;
+
+        box-shadow:
+            0 22px 42px rgba(0, 0, 0, 0.28),
+            0 0 25px rgba(173, 157, 104, 0.07) !important;
+    }
+
+    .home .grupo-icone:hover {
+        transform: rotate(-6deg) scale(1.08) !important;
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.25),
+            0 0 15px rgba(218, 193, 132, 0.16) !important;
+    }
+
+    .home .pessoa-botao:hover {
+        transform: translateY(-4px) scale(1.015) !important;
+
+        border-color: rgba(218, 193, 132, 0.52) !important;
+
+        background: linear-gradient(
+            135deg,
+            #416c4d,
+            #294f3b
+        ) !important;
+
+        color: #fff4d8 !important;
+
+        box-shadow:
+            0 10px 22px rgba(0, 0, 0, 0.27),
+            0 0 18px rgba(192, 168, 105, 0.11) !important;
+    }
+
+    .home .pessoa-botao:hover::before {
+        left: 150% !important;
+    }
+
+    .home .pessoa-botao:hover::after {
+        opacity: 1 !important;
+    }
+
+    .home .pessoa-botao:hover .pessoa-emoji {
+        transform: scale(1.13) rotate(-5deg) !important;
+
+        background: rgba(218, 193, 132, 0.18) !important;
+    }
+
+    .home .pessoa-link:hover {
+        text-decoration: none !important;
+    }
+
+    .home .home-aniversarios:hover {
+        border-color: rgba(218, 193, 132, 0.48) !important;
+
+        box-shadow:
+            0 22px 48px rgba(0, 0, 0, 0.30),
+            0 0 28px rgba(194, 157, 83, 0.10) !important;
+    }
 }
 
-.pessoa-link:hover .pessoa-botao::after {
-  opacity: 1;
-  transform: translateX(0);
-  color: #93c5fd;
+/* ============================================================
+   FOCO PELO TECLADO
+   ============================================================ */
+
+.home .pessoa-link:focus-visible .pessoa-botao {
+    outline: 3px solid #e2c47e !important;
+    outline-offset: 4px !important;
+
+    border-color: #e2c47e !important;
 }
 
-.familia-botoes .pessoa-link:hover .pessoa-botao {
-  border-color: rgba(96, 165, 250, 0.38);
+/* ============================================================
+   ANIMAÇÕES
+   ============================================================ */
+
+@keyframes homeCardEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
-.amigos-botoes .pessoa-link:hover .pessoa-botao {
-  border-color: rgba(167, 139, 250, 0.38);
+@keyframes homeConteudoEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.amigos-botoes .pessoa-link:hover .pessoa-botao::after {
-  color: #c4b5fd;
+@keyframes homeFundoRespirar {
+    from {
+        opacity: 0.65;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.06);
+    }
 }
 
-.pessoa-link:focus-visible {
-  outline: none;
+/* ============================================================
+   TELAS GRANDES - MONITORES
+   ============================================================ */
+
+@media (min-width: 1600px) {
+
+    .home {
+        max-width: 1650px !important;
+        padding: 80px 75px 100px !important;
+    }
+
+    .home .home-card {
+        max-width: 1400px !important;
+        padding: 60px 60px !important;
+    }
+
+    .home .home-botoes {
+        gap: 38px !important;
+    }
+
+    .home .grupo-botoes {
+        padding: 38px 35px !important;
+    }
+
+    .home .lista-botoes {
+        gap: 17px !important;
+    }
+
+    .home .pessoa-botao {
+        min-height: 65px !important;
+        padding: 15px 18px !important;
+        font-size: 1.04rem !important;
+    }
+
+    .home .home-aniversarios {
+        max-width: 1400px !important;
+    }
 }
 
-.pessoa-link:focus-visible .pessoa-botao {
-  outline: 3px solid rgba(96, 165, 250, 0.55);
-  outline-offset: 3px;
+/* ============================================================
+   NOTEBOOKS
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .home {
+        padding: 55px 35px 75px !important;
+    }
+
+    .home .home-card {
+        padding: 40px 35px !important;
+    }
+
+    .home .home-botoes {
+        gap: 22px !important;
+    }
+
+    .home .grupo-botoes {
+        padding: 25px 20px !important;
+    }
+
+    .home .lista-botoes {
+        gap: 11px !important;
+    }
+
+    .home .pessoa-botao {
+        min-height: 55px !important;
+        padding: 10px 11px !important;
+        font-size: 0.90rem !important;
+    }
 }
 
-.home-aniversarios {
-  width: 100%;
-  margin-top: 30px;
-  position: relative;
-  z-index: 2;
+/* ============================================================
+   TABLETS E TELAS MÉDIAS
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .home {
+        padding: 45px 25px 65px !important;
+    }
+
+    .home .home-card {
+        padding: 35px 25px !important;
+        border-radius: 24px !important;
+    }
+
+    .home .home-header {
+        margin-bottom: 35px !important;
+    }
+
+    .home .home-botoes {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+
+    .home .grupo-botoes {
+        padding: 28px 25px !important;
+    }
+
+    .home .lista-botoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 13px !important;
+    }
+
+    .home .pessoa-botao {
+        min-height: 58px !important;
+        padding: 12px 15px !important;
+        font-size: 0.96rem !important;
+    }
+
+    .home .home-aniversarios {
+        margin-top: 30px !important;
+        padding: 25px !important;
+    }
 }
 
-@media (max-width: 950px) {
-  .home {
-    width: 92%;
-    padding: 40px 0 55px;
-  }
-
-  .home-card {
-    padding: 40px 28px;
-    border-radius: 27px;
-  }
-
-  .home-botoes {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .grupo-botoes {
-    padding: 24px;
-  }
-}
+/* ============================================================
+   CELULARES
+   ============================================================ */
 
 @media (max-width: 600px) {
-  .home {
-    width: 94%;
-    padding: 22px 0 40px;
-  }
 
-  .home-card {
-    padding: 30px 15px;
-    border-radius: 22px;
-  }
+    .home {
+        padding: 30px 15px 45px !important;
+    }
 
-  .home-header {
-    margin-bottom: 30px;
-  }
+    .home .home-card {
+        padding: 28px 17px !important;
+        border-radius: 20px !important;
+    }
 
-  .home-header h1 {
-    font-size: clamp(1.8rem, 9vw, 2.5rem);
-    line-height: 1.12;
-  }
+    .home .home-header {
+        margin-bottom: 27px !important;
+        padding-bottom: 22px !important;
+    }
 
-  .home-header p {
-    font-size: 0.94rem;
-    line-height: 1.7;
-  }
+    .home .home-header h1 {
+        font-size: clamp(1.7rem, 7vw, 2.3rem) !important;
+        letter-spacing: 0.6px !important;
+    }
 
-  .grupo-botoes {
-    padding: 20px 14px;
-    border-radius: 20px;
-  }
+    .home .home-header p {
+        font-size: 0.92rem !important;
+        line-height: 1.7 !important;
+    }
 
-  .grupo-header {
-    margin-bottom: 19px;
-  }
+    .home .grupo-botoes {
+        padding: 23px 17px !important;
+        border-radius: 18px !important;
+    }
 
-  .grupo-header h2 {
-    font-size: 1.18rem;
-  }
+    .home .grupo-header {
+        gap: 10px !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 17px !important;
+    }
 
-  .grupo-icone {
-    width: 40px;
-    height: 40px;
-    border-radius: 11px;
-    font-size: 1.15rem;
-  }
+    .home .grupo-header h2 {
+        font-size: 1.3rem !important;
+    }
 
-  .pessoa-botao {
-    min-height: 56px;
-    padding: 11px 13px;
-    border-radius: 14px;
-    font-size: 0.95rem;
-  }
+    .home .grupo-icone {
+        width: 39px !important;
+        height: 39px !important;
+        font-size: 1.25rem !important;
+    }
 
-  .pessoa-emoji {
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
-    font-size: 1rem;
-  }
+    .home .lista-botoes {
+        gap: 10px !important;
+    }
 
-  .pessoa-link:hover .pessoa-botao {
-    transform: none;
-  }
+    .home .pessoa-botao {
+        min-height: 54px !important;
+        padding: 9px 10px !important;
+        gap: 8px !important;
+        font-size: 0.87rem !important;
+        border-radius: 11px !important;
+    }
 
-  .pessoa-botao::after {
-    opacity: 1;
-    transform: none;
-    color: #64748b;
-  }
+    .home .pessoa-emoji {
+        width: 29px !important;
+        height: 29px !important;
+        font-size: 1.08rem !important;
+    }
+
+    .home .home-aniversarios {
+        margin-top: 25px !important;
+        padding: 20px 15px !important;
+        border-radius: 19px !important;
+    }
 }
 
-@media (max-width: 380px) {
-  .home {
-    width: 95%;
-    padding: 15px 0 30px;
-  }
+/* ============================================================
+   CELULARES PEQUENOS
+   ============================================================ */
 
-  .home-card {
-    padding: 24px 10px;
-    border-radius: 19px;
-  }
+@media (max-width: 420px) {
 
-  .home-header h1 {
-    font-size: 1.7rem;
-  }
+    .home {
+        padding: 23px 10px 35px !important;
+    }
 
-  .home-header p {
-    font-size: 0.88rem;
-  }
+    .home .home-card {
+        padding: 23px 12px !important;
+        border-radius: 17px !important;
+    }
 
-  .grupo-botoes {
-    padding: 17px 10px;
-    border-radius: 17px;
-  }
+    .home .home-header h1 {
+        font-size: 1.65rem !important;
+    }
 
-  .grupo-header h2 {
-    font-size: 1.05rem;
-  }
+    .home .home-header p {
+        font-size: 0.85rem !important;
+    }
 
-  .grupo-icone {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
+    .home .grupo-botoes {
+        padding: 20px 12px !important;
+    }
 
-  .pessoa-botao {
-    min-height: 52px;
-    padding: 10px 11px;
-    font-size: 0.9rem;
-  }
+    .home .lista-botoes {
+        gap: 8px !important;
+    }
 
-  .pessoa-emoji {
-    width: 29px;
-    height: 29px;
-    font-size: 0.9rem;
-  }
+    .home .pessoa-botao {
+        min-height: 50px !important;
+        padding: 8px 7px !important;
+        gap: 6px !important;
+        font-size: 0.78rem !important;
+    }
+
+    .home .pessoa-emoji {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.98rem !important;
+    }
+
+    .home .home-aniversarios {
+        padding: 17px 11px !important;
+    }
 }
+
+/* ============================================================
+   CELULARES MUITO ESTREITOS
+   ============================================================ */
+
+@media (max-width: 340px) {
+
+    .home {
+        padding: 18px 7px 28px !important;
+    }
+
+    .home .home-card {
+        padding: 20px 9px !important;
+    }
+
+    .home .home-header h1 {
+        font-size: 1.45rem !important;
+    }
+
+    .home .grupo-botoes {
+        padding: 17px 9px !important;
+    }
+
+    .home .grupo-header h2 {
+        font-size: 1.15rem !important;
+    }
+
+    .home .lista-botoes {
+        grid-template-columns: 1fr !important;
+        gap: 9px !important;
+    }
+
+    .home .pessoa-botao {
+        min-height: 48px !important;
+        padding: 8px 12px !important;
+        font-size: 0.86rem !important;
+    }
+
+    .home .pessoa-emoji {
+        width: 29px !important;
+        height: 29px !important;
+    }
+}
+
+/* ============================================================
+   ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+   ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  .grupo-botoes,
-  .pessoa-botao,
-  .pessoa-emoji,
-  .pessoa-botao::after {
-    transition: none;
-  }
 
-  .grupo-botoes:hover,
-  .pessoa-link:hover .pessoa-botao,
-  .pessoa-link:hover .pessoa-emoji {
-    transform: none;
-  }
+    .home-page::before,
+    .home .home-card,
+    .home .home-header,
+    .home .home-botoes,
+    .home .home-aniversarios {
+        animation: none !important;
+    }
+
+    .home .grupo-botoes,
+    .home .pessoa-botao,
+    .home .pessoa-emoji,
+    .home .grupo-icone,
+    .home .home-card,
+    .home .home-aniversarios {
+        transition: none !important;
+    }
 }

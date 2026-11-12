@@ -1,64 +1,1403 @@
+
+/* =========================================
+   FAMÍLIA G.A. - ESTILO PRINCIPAL
+========================================= */
+
 .login {
-  max-width: 380px;
-  margin: 80px auto;
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  color: #F5F0E6;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(82, 107, 85, 0.3),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #1B3028,
+      #233D32,
+      #172820
+    );
 }
 
-.login h1 {
-  margin-bottom: 30px;
-  color: #333;
-  font-size: 32px;
-}
-
-.login form {
+.home-familia {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.home-header {
+  width: 100%;
+  padding: clamp(35px, 6vw, 75px) 20px 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: homeAparecer 1s ease;
+}
+
+.home-logo {
+  width: clamp(110px, 16vw, 190px);
+  height: clamp(110px, 16vw, 190px);
+
+  object-fit: contain;
+  margin-bottom: 20px;
+
+  filter: drop-shadow(
+    0 8px 20px rgba(0, 0, 0, 0.3)
+  );
+
+  animation: homeFlutuar 4s ease-in-out infinite;
+}
+
+.home-header h1 {
+  color: #E8DDC6;
+  font-size: clamp(30px, 5vw, 65px);
+  font-weight: 700;
+  letter-spacing: clamp(2px, 0.7vw, 6px);
+
+  overflow-wrap: anywhere;
+
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.home-header p {
+  margin-top: 15px;
+
+  color: #C5A66A;
+
+  font-size: clamp(10px, 1.4vw, 15px);
+  letter-spacing: clamp(1px, 0.4vw, 4px);
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   APRESENTAÇÃO
+========================================= */
+
+.home-apresentacao {
+  width: min(90%, 850px);
+
+  padding: clamp(25px, 5vw, 50px);
+  margin: 20px auto;
+
+  border-top: 1px solid rgba(197, 166, 106, 0.5);
+  border-bottom: 1px solid rgba(197, 166, 106, 0.5);
+
+  animation: homeAparecer 1.2s ease;
+}
+
+.home-apresentacao h2 {
+  color: #E8DDC6;
+
+  font-size: clamp(22px, 3.5vw, 38px);
+
+  margin-bottom: 25px;
+}
+
+.home-apresentacao p {
+  color: #D8DCCF;
+
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.9;
+
+  margin-bottom: 12px;
+}
+
+/* =========================================
+   INTEGRANTES
+========================================= */
+
+.home-integrantes {
+  width: min(95%, 1100px);
+
+  padding: clamp(35px, 5vw, 60px) 20px;
+}
+
+.home-integrantes h2 {
+  color: #E8DDC6;
+
+  font-size: clamp(23px, 3vw, 32px);
+
+  margin-bottom: 40px;
+}
+
+.integrantes-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+
+  gap: clamp(12px, 2.5vw, 25px);
+  flex-wrap: wrap;
+}
+
+.integrante {
+  width: min(100%, 280px);
+  min-height: 145px;
+
+  flex: 1 1 220px;
+
+  padding: clamp(25px, 4vw, 35px) 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgba(232, 221, 198, 0.08);
+
+  border: 1px solid rgba(197, 166, 106, 0.35);
+  border-radius: 15px;
+
+  transition: all 0.35s ease;
+}
+
+.integrante:hover {
+  transform: translateY(-8px);
+
+  background: rgba(232, 221, 198, 0.15);
+
+  border-color: #C5A66A;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.integrante h3 {
+  color: #E8DDC6;
+
+  font-size: clamp(20px, 2.5vw, 25px);
+
+  margin-bottom: 12px;
+}
+
+.integrante p {
+  color: #C5A66A;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   HISTÓRIAS
+========================================= */
+
+.home-historias {
+  width: 100%;
+
+  padding: clamp(40px, 7vw, 80px) 20px;
+
+  background: #E8DDC6;
+  color: #233D32;
+}
+
+.home-historias h2 {
+  font-size: clamp(23px, 3.5vw, 34px);
+
+  margin-bottom: 25px;
+}
+
+.home-historias p {
+  width: min(100%, 700px);
+
+  margin: 12px auto;
+
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.8;
+}
+
+/* =========================================
+   ACESSO À ÁREA DA FAMÍLIA
+========================================= */
+
+.home-acesso {
+  width: 100%;
+
+  padding: clamp(45px, 7vw, 80px) 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-acesso h2 {
+  color: #E8DDC6;
+
+  font-size: clamp(23px, 3.5vw, 34px);
+
+  margin-bottom: 18px;
+}
+
+.home-acesso p {
+  color: #D8DCCF;
+
+  font-size: clamp(14px, 1.5vw, 17px);
+
+  margin-bottom: 30px;
+}
+
+.home-acesso button {
+  width: min(100%, 300px);
+
+  min-height: 52px;
+  padding: 15px 25px;
+
+  background: #C5A66A;
+  color: #233D32;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+.home-acesso button:hover {
+  background: #E8DDC6;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.home-footer {
+  width: 100%;
+
+  padding: 25px 15px;
+
+  border-top: 1px solid rgba(197, 166, 106, 0.3);
+
+  color: #C5A66A;
+
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 1px;
+
+  text-align: center;
+}
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.login-container {
+  width: min(90%, 430px);
+  min-height: 100vh;
+
+  margin: auto;
+  padding: clamp(20px, 5vw, 40px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  animation: homeAparecer 0.7s ease;
+}
+
+.login-container .home-logo {
+  width: clamp(100px, 15vw, 130px);
+  height: clamp(100px, 15vw, 130px);
+}
+
+.login-container h1 {
+  color: #E8DDC6;
+
+  font-size: clamp(27px, 4vw, 36px);
+
+  margin-bottom: 35px;
+}
+
+.login-container form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
   gap: 18px;
 }
 
-.login input {
-  padding: 14px;
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
-  font-size: 16px;
+.login-container input {
+  width: 100%;
+  min-height: 50px;
+
+  padding: 15px;
+
+  background: rgba(245, 240, 230, 0.08);
+
+  border: 1px solid rgba(197, 166, 106, 0.4);
+  border-radius: 8px;
+
   outline: none;
-  transition: 0.3s;
-}
 
-.login input:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 8px rgba(79, 70, 229, 0.2);
-}
-
-.login button {
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background: #4f46e5;
-  color: white;
+  color: #F5F0E6;
   font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+
+  transition: all 0.3s ease;
 }
 
-.login button:hover {
-  background: #4338ca;
+.login-container input::placeholder {
+  color: #C5C9BF;
+}
+
+.login-container input:focus {
+  border-color: #C5A66A;
+
+  box-shadow:
+    0 0 12px rgba(197, 166, 106, 0.2);
+}
+
+.login-container form button {
+  width: 100%;
+  min-height: 50px;
+
+  padding: 15px;
+
+  background: #C5A66A;
+  color: #233D32;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.login-container form button:hover {
+  background: #E8DDC6;
+
+  transform: translateY(-3px);
+}
+
+.login-container form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-container > button {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 13px;
+  margin-top: 18px;
+
+  background: transparent;
+
+  border: 1px solid rgba(197, 166, 106, 0.5);
+  border-radius: 8px;
+
+  color: #E8DDC6;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.login-container > button:hover {
+  background: rgba(232, 221, 198, 0.1);
+
+  border-color: #C5A66A;
+}
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@keyframes homeAparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes homeFlutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* =========================================
+   CELULARES PEQUENOS
+   Até 360px
+========================================= */
+
+@media (max-width: 360px) {
+
+  .home-header {
+    padding: 30px 12px;
+  }
+
+  .home-header h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .home-header p {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .home-apresentacao {
+    width: 94%;
+    padding: 25px 12px;
+  }
+
+  .home-apresentacao h2 {
+    font-size: 21px;
+  }
+
+  .home-integrantes {
+    width: 100%;
+    padding: 30px 12px;
+  }
+
+  .integrante {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .home-acesso p {
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .login-container {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+}
+
+/* =========================================
+   CELULARES
+   361px até 600px
+========================================= */
+
+@media (min-width: 361px) and (max-width: 600px) {
+
+  .home-header {
+    padding: 40px 15px;
+  }
+
+  .home-apresentacao {
+    width: 92%;
+    padding: 30px 18px;
+  }
+
+  .integrantes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .integrante {
+    width: 100%;
+    max-width: 340px;
+    flex: none;
+  }
+
+  .home-historias {
+    padding: 50px 20px;
+  }
+
+  .login-container {
+    width: 95%;
+  }
+
+}
+
+/* =========================================
+   TABLETS
+   601px até 900px
+========================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .home-header {
+    padding: 55px 25px 40px;
+  }
+
+  .home-integrantes {
+    width: 95%;
+  }
+
+  .integrantes-container {
+    gap: 18px;
+  }
+
+  .integrante {
+    flex: 1 1 40%;
+    max-width: 300px;
+  }
+
+  .home-apresentacao {
+    width: 85%;
+  }
+
+  .login-container {
+    width: 80%;
+    max-width: 450px;
+  }
+
+}
+
+/* =========================================
+   NOTEBOOKS
+   901px até 1440px
+========================================= */
+
+@media (min-width: 901px) and (max-width: 1440px) {
+
+  .home-integrantes {
+    max-width: 1100px;
+  }
+
+  .integrante {
+    max-width: 280px;
+  }
+
+}
+
+/* =========================================
+   TELAS GRANDES
+   1441px até 1920px
+========================================= */
+
+@media (min-width: 1441px) {
+
+  .home-header {
+    padding-top: 85px;
+  }
+
+  .home-apresentacao {
+    max-width: 950px;
+  }
+
+  .home-integrantes {
+    max-width: 1250px;
+  }
+
+  .integrante {
+    max-width: 320px;
+    min-height: 175px;
+  }
+
+  .home-historias {
+    padding: 95px 30px;
+  }
+
+}
+
+/* =========================================
+   TELAS ULTRAWIDE
+   Acima de 1920px
+========================================= */
+
+@media (min-width: 1921px) {
+
+  .home-familia {
+    max-width: 2200px;
+    margin: 0 auto;
+  }
+
+  .home-header {
+    padding-top: 110px;
+  }
+
+  .home-logo {
+    width: 220px;
+    height: 220px;
+  }
+
+  .home-apresentacao {
+    max-width: 1100px;
+  }
+
+  .home-integrantes {
+    max-width: 1450px;
+  }
+
+  .home-historias {
+    padding: 110px 40px;
+  }
+
+}
+
+/* =========================================
+   TELAS COM POUCA ALTURA
+========================================= */
+
+@media (max-height: 550px) and (min-width: 601px) {
+
+  .login-container {
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .login-container .home-logo {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 10px;
+  }
+
+  .login-container h1 {
+    margin-bottom: 15px;
+  }
+
+  .login-container form {
+    gap: 10px;
+  }
+
+  .login-container > button {
+    margin-top: 10px;
+  }
+
+}
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-header,
+  .home-logo,
+  .home-apresentacao,
+  .integrante,
+  .home-acesso button,
+  .login-container,
+  .login-container button,
+  .login-container input {
+    animation: none;
+    transition: none;
+  }
+
+  .home-logo {
+    transform: none;
+  }
+
+}
+
+/* =========================================
+   DISPOSITIVOS COM TOQUE
+========================================= */
+
+@media (hover: none) {
+
+  .integrante:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .home-acesso button:hover,
+  .login-container form button:hover {
+    transform: none;
+  }
+
+}
+
+/* =========================================
+   IMPRESSÃO
+========================================= */
+
+@media print {
+
+  .home-familia,
+  .login {
+    background: #FFFFFF;
+    color: #233D32;
+  }
+
+  .home-header h1,
+  .home-apresentacao h2,
+  .home-integrantes h2,
+  .home-integrantes .integrante h3,
+  .home-historias h2 {
+    color: #233D32;
+  }
+
+  .home-acesso,
+  .login-container {
+    display: none;
+  }
+
+}
+
+/* =========================================
+   EFEITOS EXTRAS - FAMÍLIA G.A.
+========================================= */
+
+/* =========================================
+   ENTRADA DA PÁGINA
+========================================= */
+
+.home-familia {
+  animation: entradaPagina 1.2s ease both;
+}
+
+.home-header {
+  animation: entradaTopo 1.3s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.home-apresentacao {
+  animation: entradaConteudo 1.2s ease .2s both;
+}
+
+.home-integrantes {
+  animation: entradaConteudo 1.2s ease .4s both;
+}
+
+.home-historias {
+  animation: entradaConteudo 1.2s ease .6s both;
+}
+
+.home-acesso {
+  animation: entradaConteudo 1.2s ease .8s both;
+}
+
+.home-footer {
+  animation: entradaConteudo 1.2s ease 1s both;
+}
+
+@keyframes entradaPagina {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes entradaTopo {
+  from {
+    opacity: 0;
+    transform: translateY(-45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entradaConteudo {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   LOGO - EFEITOS ESPECIAIS
+========================================= */
+
+.home-logo {
+  border-radius: 28px;
+
+  transition:
+    transform .5s ease,
+    filter .5s ease;
+
+  filter:
+    drop-shadow(0 0 10px rgba(197,166,106,.25))
+    drop-shadow(0 0 25px rgba(197,166,106,.12));
+}
+
+.home-logo:hover {
+  transform: scale(1.08) rotate(-3deg);
+
+  filter:
+    drop-shadow(0 0 12px rgba(197,166,106,.7))
+    drop-shadow(0 0 35px rgba(197,166,106,.35));
+}
+
+.home-header .home-logo {
+  animation:
+    entradaLogo 1.5s ease both,
+    brilhoLogo 4s ease-in-out 1.5s infinite;
+}
+
+@keyframes entradaLogo {
+  0% {
+    opacity: 0;
+    transform: scale(.65) rotate(-12deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.08) rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes brilhoLogo {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 8px rgba(197,166,106,.2));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 18px rgba(197,166,106,.65))
+      drop-shadow(0 0 35px rgba(197,166,106,.25));
+  }
+}
+
+/* =========================================
+   ARREDONDAMENTO DOS ELEMENTOS
+========================================= */
+
+.integrante {
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+}
+
+.home-apresentacao {
+  border-radius: 18px;
+}
+
+.home-historias {
+  border-radius: 35px 35px 0 0;
+}
+
+.home-acesso button {
+  border-radius: 14px;
+}
+
+/* =========================================
+   CARTÕES DOS INTEGRANTES
+========================================= */
+
+.integrante {
+  position: relative;
+  overflow: hidden;
+}
+
+.integrante::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(197,166,106,.13),
+    transparent
+  );
+
+  transition: left .7s ease;
+}
+
+.integrante:hover::before {
+  left: 100%;
+}
+
+.integrante:hover {
+  transform: translateY(-12px) scale(1.025);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.3),
+    0 0 20px rgba(197,166,106,.1);
+}
+
+/* =========================================
+   BOTÃO PRINCIPAL
+========================================= */
+
+.home-acesso button {
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.2),
+    0 0 15px rgba(197,166,106,.12);
+}
+
+.home-acesso button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+  );
+
+  transition: left .6s ease;
+}
+
+.home-acesso button:hover::before {
+  left: 120%;
+}
+
+.home-acesso button:hover {
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.3),
+    0 0 25px rgba(197,166,106,.25);
+}
+
+/* =========================================
+   TELA DE LOGIN - NOVO VISUAL
+========================================= */
+
+.login-container {
+  position: relative;
+
+  width: min(92%, 460px);
+  min-height: auto;
+
+  padding: 45px 38px;
+
+  border: 1px solid rgba(197,166,106,.3);
+  border-radius: 30px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(52,77,58,.95),
+    rgba(23,40,32,.98)
+  );
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.35),
+    inset 0 1px 1px rgba(255,255,255,.08);
+
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+}
+
+.login-container::before {
+  content: "";
+
+  position: absolute;
+  top: -100px;
+  right: -100px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: rgba(197,166,106,.09);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+.login-container::after {
+  content: "";
+
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+
+  background: rgba(82,107,85,.2);
+
+  filter: blur(40px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   LOGO DO LOGIN
+========================================= */
+
+.login-container .home-logo {
+  position: relative;
+  z-index: 1;
+
+  width: 135px;
+  height: 135px;
+
+  margin-bottom: 18px;
+
+  border-radius: 25px;
+
+  filter:
+    drop-shadow(0 0 12px rgba(197,166,106,.3));
+}
+
+/* =========================================
+   TÍTULO DO LOGIN
+========================================= */
+
+.login-container h1 {
+  position: relative;
+  z-index: 1;
+
+  font-size: 34px;
+  letter-spacing: 3px;
+
+  margin-bottom: 35px;
+
+  text-shadow:
+    0 3px 15px rgba(0,0,0,.25);
+}
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+.login-container form {
+  position: relative;
+  z-index: 1;
+
+  gap: 20px;
+}
+
+.login-container input {
+  min-height: 55px;
+
+  padding: 17px 19px;
+
+  border-radius: 14px;
+
+  background: rgba(245,240,230,.07);
+
+  border: 1px solid rgba(197,166,106,.3);
+
+  font-size: 15px;
+
+  transition:
+    border .3s ease,
+    background .3s ease,
+    box-shadow .3s ease,
+    transform .3s ease;
+}
+
+.login-container input:hover {
+  background: rgba(245,240,230,.1);
+}
+
+.login-container input:focus {
+  background: rgba(245,240,230,.12);
+
+  border-color: #C5A66A;
+
+  box-shadow:
+    0 0 0 3px rgba(197,166,106,.1),
+    0 0 20px rgba(197,166,106,.12);
+
   transform: translateY(-2px);
 }
 
-.login button:active {
-  transform: scale(0.98);
+/* =========================================
+   BOTÃO ENTRAR
+========================================= */
+
+.login-container form button {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 55px;
+
+  margin-top: 8px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #D6B979,
+    #B89554
+  );
+
+  color: #233D32;
+
+  font-size: 16px;
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.2);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
 }
 
-@media (max-width: 480px) {
-  .login {
-    margin: 40px 20px;
-    padding: 25px;
+.login-container form button:hover {
+  background: linear-gradient(
+    135deg,
+    #E8DDC6,
+    #C5A66A
+  );
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.3),
+    0 0 20px rgba(197,166,106,.2);
+}
+
+.login-container form button:active {
+  transform: scale(.97);
+}
+
+/* =========================================
+   BOTÕES SECUNDÁRIOS
+========================================= */
+
+.login-container > button {
+  position: relative;
+  z-index: 1;
+
+  min-height: 48px;
+
+  padding: 14px 18px;
+
+  border-radius: 13px;
+
+  background: rgba(245,240,230,.035);
+
+  border: 1px solid rgba(197,166,106,.35);
+
+  color: #E8DDC6;
+
+  font-size: 14px;
+
+  transition: all .3s ease;
+}
+
+.login-container > button:hover {
+  background: rgba(197,166,106,.13);
+
+  border-color: #C5A66A;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVIDADE DOS NOVOS EFEITOS
+========================================= */
+
+@media (max-width: 600px) {
+
+  .login-container {
+    width: 94%;
+
+    padding: 35px 22px;
+
+    border-radius: 24px;
   }
+
+  .login-container .home-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .login-container h1 {
+    font-size: 29px;
+    margin-bottom: 28px;
+  }
+
+  .login-container input,
+  .login-container form button {
+    min-height: 52px;
+  }
+
+  .login-container > button {
+    font-size: 13px;
+  }
+
+  .home-logo:hover {
+    transform: none;
+  }
+
+}
+
+/* =========================================
+   ACESSIBILIDADE DOS EFEITOS
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-familia,
+  .home-header,
+  .home-apresentacao,
+  .home-integrantes,
+  .home-historias,
+  .home-acesso,
+  .home-footer,
+  .home-header .home-logo {
+    animation: none;
+  }
+
+  .integrante,
+  .home-logo,
+  .home-acesso button,
+  .login-container,
+  .login-container input,
+  .login-container button {
+    transition: none;
+  }
+
+}
+
+/* =========================================
+   CORREÇÃO DEFINITIVA - INPUTS DO LOGIN
+========================================= */
+
+.login-container form {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+}
+
+.login-container form input {
+    width: 90% !important;
+    max-width: 90% !important;
+    min-width: 0 !important;
+
+    min-height: 55px !important;
+    padding: 17px 19px !important;
+
+    box-sizing: border-box !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    border-radius: 14px !important;
+    background: rgba(245, 240, 230, 0.07) !important;
+    border: 1px solid rgba(197, 166, 106, 0.3) !important;
+
+    color: #F5F0E6 !important;
+    font-size: 15px !important;
+
+    outline: none !important;
+
+    transition:
+        border 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease !important;
+}
+
+.login-container form input::placeholder {
+    color: #C5C9BF !important;
+    opacity: 1 !important;
+}
+
+.login-container form input:hover {
+    background: rgba(245, 240, 230, 0.1) !important;
+}
+
+.login-container form input:focus {
+    background: rgba(245, 240, 230, 0.12) !important;
+    border-color: #C5A66A !important;
+
+    box-shadow:
+        0 0 0 3px rgba(197, 166, 106, 0.1),
+        0 0 20px rgba(197, 166, 106, 0.12) !important;
+
+    transform: translateY(-2px) !important;
+}
+
+/* BOTÃO ENTRAR CENTRALIZADO */
+
+.login-container form button {
+    width: 90% !important;
+    max-width: 90% !important;
+    min-height: 55px !important;
+
+    box-sizing: border-box !important;
+    margin: 8px auto 0 !important;
+
+    border-radius: 14px !important;
+}
+
+/* BOTÕES SECUNDÁRIOS */
+
+.login-container > button {
+    width: 90% !important;
+    max-width: 90% !important;
+
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+    .login-container form input {
+        width: 90% !important;
+        max-width: 90% !important;
+        min-height: 52px !important;
+    }
+
+    .login-container form button,
+    .login-container > button {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
 }

@@ -1,165 +1,802 @@
+/* ============================================================
+   FOOTER - FAMÍLIA GONÇALMEIDA
+   Estilo: Natureza | Degradê | Assimétrico
+   ============================================================ */
+
 .site-footer {
-  width: 100%;
+    position: relative !important;
+    isolation: isolate !important;
 
-  margin-top: auto;
+    width: 100% !important;
+    margin-top: 55px !important;
 
-  background-color: #241b35;
-  color: white;
+    overflow: hidden !important;
+
+    color: #e9eee4 !important;
+
+    background:
+        radial-gradient(
+            ellipse at 12% 10%,
+            rgba(76, 132, 85, 0.24),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 90% 90%,
+            rgba(190, 157, 91, 0.13),
+            transparent 38%
+        ),
+        linear-gradient(
+            125deg,
+            #071b15 0%,
+            #123b2b 48%,
+            #0b291f 100%
+        ) !important;
+
+    border-top: 1px solid rgba(190, 170, 115, 0.35) !important;
+
+    box-shadow:
+        0 -12px 35px rgba(0, 0, 0, 0.17),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+
+    animation: footerEntrada 0.85s ease both !important;
 }
 
-.footer-container {
-  width: 90%;
-  max-width: 1200px;
+/* ============================================================
+   ILUMINAÇÃO E TEXTURA DO FUNDO
+   ============================================================ */
 
-  margin: 0 auto;
+.site-footer::before {
+    content: "" !important;
 
-  padding: 45px 0;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
 
-  display: grid;
+    pointer-events: none !important;
 
-  grid-template-columns: 2fr 1fr 1.5fr;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(126, 170, 115, 0.12),
+            transparent 55%
+        ),
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(205, 181, 124, 0.035),
+            transparent
+        ) !important;
 
-  gap: 50px;
+    animation: footerLuz 10s ease-in-out infinite alternate !important;
 }
 
-/* MARCA */
+.site-footer::after {
+    content: "" !important;
 
-.footer-brand {
-  display: flex;
-  align-items: flex-start;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
 
-  gap: 15px;
+    pointer-events: none !important;
+
+    opacity: 0.13 !important;
+
+    background-image:
+        radial-gradient(
+            rgba(225, 215, 173, 0.35) 0.7px,
+            transparent 0.7px
+        ) !important;
+
+    background-size: 27px 27px !important;
 }
 
-.footer-logo {
-  width: 50px;
-  height: 50px;
+/* ============================================================
+   CONTAINER PRINCIPAL
+   ============================================================ */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.site-footer .footer-container {
+    position: relative !important;
+    z-index: 1 !important;
 
-  background-color: #5b3cc4;
+    display: grid !important;
 
-  border-radius: 12px;
+    grid-template-columns: 1.5fr 0.8fr 1fr !important;
 
-  font-size: 1.7rem;
+    gap: 55px !important;
+
+    width: 100% !important;
+    max-width: 1450px !important;
+
+    margin: 0 auto !important;
+    padding: 65px 65px 55px !important;
+
+    box-sizing: border-box !important;
+
+    align-items: start !important;
 }
 
-.footer-brand h3 {
-  margin: 0 0 8px;
+/* ============================================================
+   MARCA / IDENTIDADE DA FAMÍLIA
+   ============================================================ */
 
-  font-size: 1.2rem;
+.site-footer .footer-brand {
+    display: flex !important;
+    align-items: flex-start !important;
+
+    gap: 20px !important;
+
+    max-width: 500px !important;
+    min-width: 0 !important;
 }
 
-.footer-brand p,
-.footer-message p {
-  margin: 0;
+.site-footer .footer-logo {
+    position: relative !important;
 
-  max-width: 350px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-  color: #c9c3d4;
+    flex-shrink: 0 !important;
 
-  line-height: 1.6;
+    width: 67px !important;
+    height: 67px !important;
+
+    border: 1px solid rgba(218, 195, 137, 0.48) !important;
+    border-radius: 20px !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(185, 158, 96, 0.25),
+        rgba(81, 129, 82, 0.28)
+    ) !important;
+
+    color: #f1dfad !important;
+
+    font-size: 2rem !important;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25),
+        0 0 22px rgba(197, 169, 106, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+
+    animation: footerLogoFlutuar 4s ease-in-out infinite !important;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease !important;
 }
 
-/* LINKS */
+.site-footer .footer-brand h3 {
+    margin: 3px 0 13px !important;
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
+    color: #e8d6a5 !important;
 
-  gap: 10px;
+    font-size: clamp(1.25rem, 2vw, 1.65rem) !important;
+    font-weight: 800 !important;
+
+    letter-spacing: 0.7px !important;
+    line-height: 1.3 !important;
+
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
-.footer-links h4,
-.footer-message h4 {
-  margin: 0 0 8px;
+.site-footer .footer-brand p {
+    max-width: 390px !important;
 
-  font-size: 1rem;
+    margin: 0 !important;
+
+    color: #c2d2c3 !important;
+
+    font-size: 0.96rem !important;
+    line-height: 1.9 !important;
+    font-weight: 400 !important;
 }
 
-.footer-links a {
-  color: #c9c3d4;
+/* ============================================================
+   NAVEGAÇÃO
+   ============================================================ */
 
-  text-decoration: none;
+.site-footer .footer-links {
+    position: relative !important;
 
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+
+    min-width: 0 !important;
+
+    padding-left: 32px !important;
+
+    border-left: 1px solid rgba(192, 175, 126, 0.25) !important;
 }
 
-.footer-links a:hover {
-  color: #ffe082;
+.site-footer .footer-links h4 {
+    position: relative !important;
 
-  transform: translateX(4px);
+    margin: 3px 0 23px !important;
+    padding-bottom: 12px !important;
+
+    color: #e6d5a8 !important;
+
+    font-size: 1.08rem !important;
+    font-weight: 750 !important;
+
+    letter-spacing: 0.8px !important;
 }
 
-/* MENSAGEM */
+.site-footer .footer-links h4::after {
+    content: "" !important;
 
-.footer-message {
-  display: flex;
-  flex-direction: column;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
 
-  gap: 5px;
+    width: 38px !important;
+    height: 2px !important;
+
+    border-radius: 5px !important;
+
+    background: linear-gradient(
+        90deg,
+        #d5b875,
+        rgba(213, 184, 117, 0.1)
+    ) !important;
 }
 
-/* PARTE INFERIOR */
+.site-footer .footer-links a {
+    position: relative !important;
 
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-flex !important;
+    align-items: center !important;
 
-  padding: 20px;
+    width: fit-content !important;
+    max-width: 100% !important;
 
-  text-align: center;
+    margin-bottom: 15px !important;
+    padding: 4px 0 !important;
+
+    color: #c9d8ca !important;
+
+    font-size: 0.94rem !important;
+    font-weight: 550 !important;
+
+    text-decoration: none !important;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease !important;
 }
 
-.footer-bottom p {
-  margin: 0;
+.site-footer .footer-links a::before {
+    content: "" !important;
 
-  color: #aaa3b5;
+    width: 6px !important;
+    height: 6px !important;
 
-  font-size: 0.85rem;
+    margin-right: 10px !important;
+
+    flex-shrink: 0 !important;
+
+    border-radius: 50% !important;
+
+    background: #bba36c !important;
+
+    box-shadow: 0 0 8px rgba(210, 181, 116, 0.4) !important;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease !important;
 }
 
-/* RESPONSIVIDADE */
+.site-footer .footer-links a::after {
+    content: "" !important;
 
-@media (max-width: 800px) {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 16px !important;
 
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
+    width: 0 !important;
+    height: 1px !important;
 
-    gap: 35px;
-  }
+    background: #d8bf82 !important;
 
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
+    transition: width 0.3s ease !important;
 }
 
-@media (max-width: 550px) {
+/* ============================================================
+   MENSAGEM FINAL
+   ============================================================ */
 
-  .footer-container {
-    grid-template-columns: 1fr;
+.site-footer .footer-message {
+    position: relative !important;
 
-    text-align: center;
-  }
+    min-width: 0 !important;
 
-  .footer-brand {
-    grid-column: auto;
+    padding: 25px 25px 23px !important;
 
-    flex-direction: column;
-    align-items: center;
-  }
+    border: 1px solid rgba(186, 170, 119, 0.25) !important;
+    border-radius: 17px !important;
 
-  .footer-brand p,
-  .footer-message p {
-    margin: 0 auto;
-  }
+    background: linear-gradient(
+        145deg,
+        rgba(54, 82, 51, 0.47),
+        rgba(22, 55, 40, 0.63)
+    ) !important;
 
-  .footer-links {
-    align-items: center;
-  }
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.17),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 
+    overflow: hidden !important;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease !important;
+}
+
+.site-footer .footer-message::before {
+    content: "" !important;
+
+    position: absolute !important;
+    top: 0 !important;
+    left: 15% !important;
+
+    width: 70% !important;
+    height: 2px !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d0b474,
+        transparent
+    ) !important;
+}
+
+.site-footer .footer-message h4 {
+    margin: 0 0 13px !important;
+
+    color: #e8d5a4 !important;
+
+    font-size: 1.08rem !important;
+    font-weight: 750 !important;
+
+    letter-spacing: 0.3px !important;
+}
+
+.site-footer .footer-message p {
+    margin: 0 !important;
+
+    color: #c5d3c5 !important;
+
+    font-size: 0.91rem !important;
+    line-height: 1.8 !important;
+}
+
+/* ============================================================
+   SEPARADOR E RODAPÉ INFERIOR
+   ============================================================ */
+
+.site-footer .footer-bottom {
+    position: relative !important;
+    z-index: 1 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+
+    min-height: 75px !important;
+
+    padding: 18px 30px !important;
+
+    box-sizing: border-box !important;
+
+    border-top: 1px solid rgba(190, 174, 127, 0.20) !important;
+
+    background: rgba(3, 19, 14, 0.30) !important;
+
+    text-align: center !important;
+}
+
+.site-footer .footer-bottom p {
+    margin: 0 !important;
+
+    color: #aebfae !important;
+
+    font-size: 0.85rem !important;
+    line-height: 1.7 !important;
+
+    letter-spacing: 0.3px !important;
+}
+
+/* ============================================================
+   HOVER - EFEITOS INTERATIVOS
+   ============================================================ */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .site-footer .footer-logo:hover {
+        transform: translateY(-5px) rotate(-5deg) scale(1.06) !important;
+
+        border-color: #dfc68d !important;
+
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.30),
+            0 0 30px rgba(211, 181, 113, 0.25) !important;
+    }
+
+    .site-footer .footer-links a:hover {
+        color: #f0dba9 !important;
+
+        transform: translateX(6px) !important;
+    }
+
+    .site-footer .footer-links a:hover::before {
+        transform: scale(1.45) !important;
+
+        background: #e2c47e !important;
+    }
+
+    .site-footer .footer-links a:hover::after {
+        width: calc(100% - 16px) !important;
+    }
+
+    .site-footer .footer-message:hover {
+        transform: translateY(-5px) !important;
+
+        border-color: rgba(215, 190, 128, 0.48) !important;
+
+        box-shadow:
+            0 18px 35px rgba(0, 0, 0, 0.25),
+            0 0 23px rgba(199, 172, 110, 0.09) !important;
+    }
+}
+
+/* ============================================================
+   ACESSIBILIDADE - FOCO
+   ============================================================ */
+
+.site-footer .footer-links a:focus-visible {
+    outline: 2px solid #e4c984 !important;
+    outline-offset: 5px !important;
+
+    border-radius: 4px !important;
+
+    color: #f0dba9 !important;
+}
+
+/* ============================================================
+   ANIMAÇÕES
+   ============================================================ */
+
+@keyframes footerEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes footerLogoFlutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes footerLuz {
+    from {
+        opacity: 0.55;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================================
+   MONITORES GRANDES
+   ============================================================ */
+
+@media (min-width: 1600px) {
+
+    .site-footer .footer-container {
+        max-width: 1650px !important;
+
+        grid-template-columns: 1.6fr 0.8fr 1.1fr !important;
+
+        gap: 75px !important;
+
+        padding: 75px 80px 65px !important;
+    }
+
+    .site-footer .footer-logo {
+        width: 75px !important;
+        height: 75px !important;
+
+        font-size: 2.2rem !important;
+    }
+
+    .site-footer .footer-brand h3 {
+        font-size: 1.8rem !important;
+    }
+
+    .site-footer .footer-brand p {
+        font-size: 1.03rem !important;
+    }
+
+    .site-footer .footer-message {
+        padding: 30px !important;
+    }
+}
+
+/* ============================================================
+   NOTEBOOKS E DESKTOPS MENORES
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .site-footer .footer-container {
+        grid-template-columns: 1.3fr 0.8fr 1fr !important;
+
+        gap: 35px !important;
+
+        padding: 55px 40px 45px !important;
+    }
+
+    .site-footer .footer-links {
+        padding-left: 22px !important;
+    }
+
+    .site-footer .footer-message {
+        padding: 21px 18px !important;
+    }
+}
+
+/* ============================================================
+   TABLETS
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .site-footer {
+        margin-top: 40px !important;
+    }
+
+    .site-footer .footer-container {
+        grid-template-columns: 1.2fr 0.8fr !important;
+
+        gap: 35px 25px !important;
+
+        padding: 45px 35px !important;
+    }
+
+    .site-footer .footer-brand {
+        grid-column: 1 / -1 !important;
+
+        max-width: 650px !important;
+    }
+
+    .site-footer .footer-links {
+        padding-left: 20px !important;
+    }
+
+    .site-footer .footer-message {
+        align-self: stretch !important;
+    }
+}
+
+/* ============================================================
+   CELULARES E TELAS PEQUENAS
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        margin-top: 30px !important;
+    }
+
+    .site-footer .footer-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        gap: 30px !important;
+
+        padding: 40px 22px 35px !important;
+    }
+
+    .site-footer .footer-brand {
+        flex-direction: column !important;
+        align-items: center !important;
+
+        gap: 15px !important;
+
+        width: 100% !important;
+        max-width: 420px !important;
+
+        text-align: center !important;
+    }
+
+    .site-footer .footer-logo {
+        width: 61px !important;
+        height: 61px !important;
+
+        border-radius: 18px !important;
+
+        font-size: 1.8rem !important;
+    }
+
+    .site-footer .footer-brand h3 {
+        margin-bottom: 10px !important;
+
+        font-size: 1.35rem !important;
+    }
+
+    .site-footer .footer-brand p {
+        max-width: 350px !important;
+
+        font-size: 0.90rem !important;
+        line-height: 1.8 !important;
+    }
+
+    .site-footer .footer-links {
+        align-items: center !important;
+
+        width: 100% !important;
+        max-width: 420px !important;
+
+        padding: 25px 0 0 !important;
+
+        border-left: none !important;
+        border-top: 1px solid rgba(192, 175, 126, 0.25) !important;
+    }
+
+    .site-footer .footer-links h4 {
+        margin-bottom: 17px !important;
+    }
+
+    .site-footer .footer-links h4::after {
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+    .site-footer .footer-links a {
+        justify-content: center !important;
+
+        margin-bottom: 12px !important;
+    }
+
+    .site-footer .footer-message {
+        width: 100% !important;
+        max-width: 420px !important;
+
+        padding: 23px 20px !important;
+
+        box-sizing: border-box !important;
+
+        text-align: center !important;
+    }
+
+    .site-footer .footer-message h4 {
+        font-size: 1rem !important;
+    }
+
+    .site-footer .footer-message p {
+        font-size: 0.88rem !important;
+    }
+
+    .site-footer .footer-bottom {
+        min-height: 68px !important;
+
+        padding: 17px 18px !important;
+    }
+
+    .site-footer .footer-bottom p {
+        font-size: 0.78rem !important;
+    }
+}
+
+/* ============================================================
+   CELULARES PEQUENOS
+   ============================================================ */
+
+@media (max-width: 400px) {
+
+    .site-footer .footer-container {
+        gap: 25px !important;
+
+        padding: 32px 16px 28px !important;
+    }
+
+    .site-footer .footer-logo {
+        width: 55px !important;
+        height: 55px !important;
+
+        font-size: 1.6rem !important;
+    }
+
+    .site-footer .footer-brand h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .site-footer .footer-brand p {
+        font-size: 0.84rem !important;
+    }
+
+    .site-footer .footer-message {
+        padding: 20px 15px !important;
+    }
+
+    .site-footer .footer-bottom {
+        padding: 15px 12px !important;
+    }
+
+    .site-footer .footer-bottom p {
+        font-size: 0.73rem !important;
+    }
+}
+
+/* ============================================================
+   CELULARES MUITO ESTREITOS
+   ============================================================ */
+
+@media (max-width: 340px) {
+
+    .site-footer .footer-container {
+        padding: 28px 12px 24px !important;
+    }
+
+    .site-footer .footer-brand h3 {
+        font-size: 1.08rem !important;
+    }
+
+    .site-footer .footer-brand p {
+        font-size: 0.80rem !important;
+    }
+
+    .site-footer .footer-message h4 {
+        font-size: 0.94rem !important;
+    }
+
+    .site-footer .footer-message p {
+        font-size: 0.82rem !important;
+    }
+
+    .site-footer .footer-bottom p {
+        font-size: 0.68rem !important;
+    }
+}
+
+/* ============================================================
+   ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .site-footer,
+    .site-footer::before,
+    .site-footer .footer-logo {
+        animation: none !important;
+    }
+
+    .site-footer .footer-logo,
+    .site-footer .footer-links a,
+    .site-footer .footer-message {
+        transition: none !important;
+    }
 }

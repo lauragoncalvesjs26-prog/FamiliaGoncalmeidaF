@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./login.css";
 import { API_URL } from "../../../api";
-
+import logoFamilia from "./logos/f.png";
 
 export default function Login() {
 
@@ -12,14 +14,15 @@ export default function Login() {
   const [senha, setSenha] = useState("");
   const [carregando, setCarregando] = useState(false);
 
+  // Controla a exibição da tela de login
+  const [mostrarLogin, setMostrarLogin] = useState(false);
+
   async function entrar(e) {
 
     e.preventDefault();
 
     if (!email || !senha) {
-
       alert("Preencha o email e a senha.");
-
       return;
     }
 
@@ -46,7 +49,7 @@ export default function Login() {
       const dados = await resposta.json();
 
       console.log("RESPOSTA COMPLETA DO LOGIN:", dados);
-console.log("TOKEN RECEBIDO:", dados.token);
+      console.log("TOKEN RECEBIDO:", dados.token);
 
       if (!resposta.ok) {
 
@@ -58,33 +61,25 @@ console.log("TOKEN RECEBIDO:", dados.token);
         return;
       }
 
+      localStorage.setItem("logado", "true");
+
       localStorage.setItem(
-  "logado",
-  "true"
-);
+        "token",
+        dados.token
+      );
 
-localStorage.setItem(
-  "token",
-  dados.token
-);
-
-localStorage.setItem(
-  "usuario",
-  JSON.stringify(dados.usuario)
-);
+      localStorage.setItem(
+        "usuario",
+        JSON.stringify(dados.usuario)
+      );
 
       navigate("/");
 
     } catch (erro) {
 
-      console.error(
-        "Erro no login:",
-        erro
-      );
+      console.error("Erro no login:", erro);
 
-      alert(
-        "Erro ao conectar com o servidor."
-      );
+      alert("Erro ao conectar com o servidor.");
 
     } finally {
 
@@ -96,53 +91,184 @@ localStorage.setItem(
 
     <div className="login">
 
-      <h1>Login</h1>
+      {!mostrarLogin ? (
 
-      <form onSubmit={entrar}>
+        /* ==================================
+           PÁGINA PRINCIPAL DA FAMÍLIA
+        ================================== */
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) =>
-            setEmail(e.target.value)
-          }
-          required
-        />
+        <main className="home-familia">
 
-        <input
-          type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={(e) =>
-            setSenha(e.target.value)
-          }
-          required
-        />
+          <header className="home-header">
 
-        <button
-          type="submit"
-          disabled={carregando}
-        >
-          {carregando
-            ? "Entrando..."
-            : "Entrar"
-          }
-        </button>
+            <img
+              src={logoFamilia}
+              alt="Logo Família G.A."
+              className="home-logo"
+            />
 
-      </form>
+            <h1>Família G.A.</h1>
 
-      <button
-        type="button"
-        onClick={() =>
-          navigate("/cadastro")
-        }
-      >
-        Não tenho conta, vou me cadastrar
-      </button>
+            <p>
+              Unida, louca e carinhosa.
+            </p>
 
-     
+          </header>
+
+          <section className="home-apresentacao">
+
+            <h2>Bem-vindos à nossa família!</h2>
+
+            <p>
+              Somos uma família cheia de personalidade,
+              carinho, histórias e momentos inesquecíveis.
+            </p>
+
+            <p>
+              Aqui celebramos nossa união e guardamos
+              as lembranças que fazem parte da nossa história.
+            </p>
+
+          </section>
+
+          <section className="home-integrantes">
+
+            <h2>Quem faz parte da nossa família</h2>
+
+            <div className="integrantes-container">
+
+              <article className="integrante">
+                <h3>Amanda</h3>
+                <p>Mãe</p>
+              </article>
+
+              <article className="integrante">
+                <h3>Daniel</h3>
+                <p>Padrasto</p>
+              </article>
+
+              <article className="integrante">
+                <h3>Marcus</h3>
+                <p>Pai</p>
+              </article>
+
+            </div>
+
+          </section>
+
+          <section className="home-historias">
+
+            <h2>Nossas histórias</h2>
+
+            <p>
+              Fogueiras, reuniões familiares,
+              risadas e muitos momentos juntos.
+            </p>
+
+            <p>
+              Cada momento tem uma história,
+              e cada história merece ser lembrada.
+            </p>
+
+          </section>
+
+          <section className="home-acesso">
+
+            <h2>Área da família</h2>
+
+            <p>
+              Entre na sua conta para acessar
+              nosso espaço reservado.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setMostrarLogin(true)}
+            >
+              Acessar minha conta
+            </button>
+
+          </section>
+
+          <footer className="home-footer">
+
+            <p>
+              Família G.A. — Feita de histórias e momentos.
+            </p>
+
+          </footer>
+
+        </main>
+
+      ) : (
+
+        /* ==================================
+           TELA DE LOGIN
+        ================================== */
+
+        <div className="login-container">
+
+          <img
+            src={logoFamilia}
+            alt="Família G.A."
+            className="home-logo"
+          />
+
+          <h1>Login</h1>
+
+          <form onSubmit={entrar}>
+
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) =>
+                setEmail(e.target.value)
+              }
+              required
+            />
+
+            <input
+              type="password"
+              placeholder="Senha"
+              value={senha}
+              onChange={(e) =>
+                setSenha(e.target.value)
+              }
+              required
+            />
+
+            <button
+              type="submit"
+              disabled={carregando}
+            >
+              {carregando
+                ? "Entrando..."
+                : "Entrar"
+              }
+            </button>
+
+          </form>
+
+          <button
+            type="button"
+            onClick={() => navigate("/cadastro")}
+          >
+            Não tenho conta, vou me cadastrar
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setMostrarLogin(false)}
+          >
+            Voltar para a página inicial
+          </button>
+
+        </div>
+
+      )}
 
     </div>
+
   );
 }

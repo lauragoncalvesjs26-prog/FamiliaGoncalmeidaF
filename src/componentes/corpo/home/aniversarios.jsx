@@ -1,3 +1,13 @@
+//1 importações (primordial)
+//2 variaveis e funções gerais (secundario)
+//3 função principal (primordial ex:export default function)
+//4 estados (secundario)
+//5 funções gerais em escopo (secundarias esceto quando precisamos de java script *quase sempre)
+//6 retorno (primordial ex:<h1>Aniversários</h1>)
+
+
+
+
 import React from "react";
 
 import "./aniversarios.css";

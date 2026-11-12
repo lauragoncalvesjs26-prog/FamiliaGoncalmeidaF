@@ -35,7 +35,7 @@ import Painel from "../painel/painel";
 import Sobre from "../sobre/sobre";
 import TesteApi8888 from "./componentes/corpo/home/erros";
 
-
+import Pratica from "./pratica";
 // =========================================================
 // RASTREAMENTO DE ROTAS
 // =========================================================
@@ -167,6 +167,11 @@ export default function App() {
       <RastrearNavegacao />
 
       <Routes>
+
+        <Route
+          path="/pratica"
+          element={<Pratica />}
+        />
 
         <Route
           path="/test"
